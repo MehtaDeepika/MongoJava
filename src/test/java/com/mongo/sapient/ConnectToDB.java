@@ -32,8 +32,8 @@ public class ConnectToDB {
         System.out.println("Collection "+collection.toString()+" selected successfully");
 
         //Insert a collection
-//        Document document = new Document("Company", "MongoDB").append("HQ", "Mongo");
-//        collection.insertOne(document);
+        Document document = new Document("Company", "MongoDB").append("HQ", "Mongo");
+        collection.insertOne(document);
 
         //Update a collections
         collection.updateOne(Filters.eq("_id", "5b7fdb9c49763238640c48fc"), Updates.set("Company", "GenyMotion"));
@@ -57,7 +57,7 @@ public class ConnectToDB {
         // Retrieving a collection
         collection = database.getCollection("post");
         // Dropping a Collection
-//        collection.drop();
-//        System.out.println("Collection dropped successfully");
+        collection.drop();
+        System.out.println("Collection dropped successfully");
     }
 }
